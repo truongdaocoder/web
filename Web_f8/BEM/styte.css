@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+body > div {
+    margin: auto;
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 12px  48px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: opacity linear .3s ;
+    min-width: 100px;
+}
+.btn + .btn {
+    margin-left: 16px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+.btn--success {
+    background-color: greenyellow;
+}
+.btn--warning {
+    background-color: orange;
+}
+.btn--danger {
+    background-color: red;
+}
+.btn--disabled {
+    opacity: 0.5  !important;
+    cursor: default;
+}
+#toast {
+    position: fixed;
+    right: 32px;
+    top: 32px;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    border-left: 4px solid ;
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    border-radius: 2px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    animation: slideInLeft ease-in .3s , fadeOut linear 1s 3s forwards;
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+.toast + .toast {
+    margin-top: 16px;
+}
+.toast__icon ,
+.toast__close {
+    padding: 0 16px;
+}
+.toast--success {
+    border-color: green;
+}
+.toast__body {
+    flex: 1;
+}
+.toast__close {
+    font-size: 24px;
+}
+.toast--success .toast__icon{
+    color: green;
+}
