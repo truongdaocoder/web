@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\html5"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web_f8"
+	}
+}
