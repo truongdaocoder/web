@@ -5,8 +5,9 @@
   --text-color: #333;
   --border-color: #dbdbdb;
   --header: 120px;
-  --header-nav: 38px;
+  --header-nav: 33.5px;
   --header-with-search: calc(var(--header) - var(--header-nav));
+  --header-sort-bar-height: 46px;
   --row: 8px;
   --col: 8px;
 }
@@ -20,36 +21,8 @@ html {
   line-height: 1.6rem;
 }
 
-.grid {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .grid__full-width {
   width: 100%;
-}
-
-.grid__row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-inline: calc(-1 * var(--row));
-}
-
-.grid__col-2 {
-  width: 16.66667%;
-  max-width: 16.66667%;
-  padding: 0 var(--col);
-}
-
-.grid__col-10 {
-  width: 83.33333%;
-  max-width: 83.33333%;
-  padding: 0 var(--col);
-}
-.grid__col-2-4 {
-  width: 20%;
-  padding: 0 var(--col);
 }
 
 @keyframes fadeIn {

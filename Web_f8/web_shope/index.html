@@ -23,14 +23,16 @@
     />
     <link rel="stylesheet" href="./asset/css/base.css" />
     <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/grid.css" />
+    <link rel="stylesheet" href="./asset/css/responsive.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="app">
       <div class="header">
-        <div class="grid">
+        <div class="grid wide">
           <!--navigation-->
-          <div class="header__nav">
+          <div class="header__nav hide-on-mobile-tablet">
             <ul class="header__nav-list">
               <li
                 class="header__nav-item header__nav-item--straight header__nav-item--qr"
@@ -179,7 +181,10 @@
           </div>
           <!--search-->
           <div class="header-with-search">
-            <div class="header__logo">
+            <label for="header__mobile-btn" class="header__mobile-search">
+              <i class="header__mobile-search-icon fas fa-search"></i>
+            </label>
+            <div class="header__logo hide-on-tablet">
              <a href="" class="header__logo-link">
               <svg class="header__logo-img" viewBox="0 0 192 65">
                 <g fill-rule="evenodd">
@@ -188,6 +193,7 @@
             </svg>
              </a>
             </div>
+            <input type="checkbox" hidden name="" id="header__mobile-btn" class="header__moblie-btn-search">
             <div class="header__search">
               <div class="header__search-wrap">
                 <input type="text" class="header__input" placeholder="Nhập để tìm kiếm sản phẩm">
@@ -320,12 +326,19 @@
             </div>
           </div>
         </div>
+        <ul class="header__sort-bar">
+        <li class="header__sort-item "><a href="" class="header__sort-link header__sort-link--active">Liên quan</a></li>
+        <li class="header__sort-item"><a href="" class="header__sort-link">Mới nhất</a></li>
+        <li class="header__sort-item"><a href="" class="header__sort-link">Bán chạy</a></li>
+        <li class="header__sort-item"><a href="" class="header__sort-link">Giá</a></li>
+        </ul>
+        
       </div>
       <div class="container">
-        <div class="grid">
-          <div class="grid__row">
+        <div class="grid wide">
+          <div class="row sm-gutter">
             <!--sidebar-->
-            <div class="grid__col-2">
+            <div class="col c-0 m-0 l-2">
               <div class="category">
                 <h3 class="category__heading">
                   <i class="category__heading-icon fa-solid fa-list"></i>
@@ -338,9 +351,9 @@
                 </ul>
               </div>
             </div>
-            <div class="grid__col-10">
+            <div class="col c-12 m-12 l-10">
               <!--home-->
-              <div class="home-filter">
+              <div class="home-filter hide-on-mobile-tablet">
                 <span class="home-filter__label">Sắp xếp theo</span>
                 <button class="home-filter__btn btn ">Phổ biến</button>
                 <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -372,10 +385,30 @@
                   </div>
                 </div>
               </div>
+              <!--mobile category-->
+              <nav class="mobile-category">
+                <ul class="mobile-category__list">
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                  <li class="mobile-category__item"><a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a></li>
+                </ul>
+              </nav>
               <!--product-list-->
               <div class="home-product">
-                <div class="grid__row">
-                  <div class="grid__col-2-4">
+                <div class="row sm-gutter app-container">
+                  <div class="col  c-6 m-4 l-2-4">
                     <a href=""  class="home-product-item"
                     >
                       <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
@@ -416,7 +449,7 @@
                     </a>
 
                   </div>
-                   <div class="grid__col-2-4">
+                   <div class="col  c-6 m-4 l-2-4">
                     <a href=""  class="home-product-item"
                     >
                       <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
@@ -455,7 +488,7 @@
                     </a>
 
                   </div>
-                  <div class="grid__col-2-4">
+                  <div class="col  c-6 m-4 l-2-4">
                     <a href=""  class="home-product-item"
                     >
                       <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
@@ -492,7 +525,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__col-2-4">
+                  <div class="col  c-6 m-4 l-2-4">
                     <a href=""  class="home-product-item"
                     >
                       <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
@@ -529,7 +562,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="grid__col-2-4">
+                  <div class="col  c-6 m-4 l-2-4">
                     <a href=""  class="home-product-item"
                     >
                       <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
@@ -565,386 +598,368 @@
                         <span class="home-product-item__sale-off-label">GIẢM</span>
                       </div>
                     </a>
-                  </div>   
+                  </div>   <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  <div class="col  c-6 m-4 l-2-4">
+                    <a href=""  class="home-product-item"
+                    >
+                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
+                      </div>
+                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                      <div class="home-product-item__price">
+                        <span class="home-product-item__old-price">1.200.000đ</span>
+                        <span class="home-product-item__curren-price">999.000đ</span>
+                      </div>
+                      <div class="home-product-item__action">
+                        <span class="home-product-item__like home-product-item__like--liked">
+                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rate">
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class="home-product-item__star--gold fas fa-star"></i>
+                          <i class=" fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="home-product-item__origin">
+                        <span class="home-product-item__name">Whoo</span>
+                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
+                      </div>
+                       <div class="home-product-item__favourite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                      </div>
+                     <div class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">43%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                      </div>
+                    </a>
+                  </div>  
                 </div>
-                 <div class="grid__row">
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>  
-                </div> 
-                  <div class="grid__row">
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="grid__col-2-4">
-                    <a href=""  class="home-product-item"
-                    >
-                      <div class="home-product-item__img" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vIKQFQU3ssKUEM9McXID7u76EpyxkJl_yQ&usqp=CAU') ;">
-                      </div>
-                      <h4 class="home-product-item__title">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
-                      <div class="home-product-item__price">
-                        <span class="home-product-item__old-price">1.200.000đ</span>
-                        <span class="home-product-item__curren-price">999.000đ</span>
-                      </div>
-                      <div class="home-product-item__action">
-                        <span class="home-product-item__like home-product-item__like--liked">
-                          <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                          <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rate">
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class="home-product-item__star--gold fas fa-star"></i>
-                          <i class=" fas fa-star"></i>
-                        </div>
-                      </div>
-                      <div class="home-product-item__origin">
-                        <span class="home-product-item__name">Whoo</span>
-                        <span class="home-product-item__origin-name">Nhật Bản</span>                    
-                      </div>
-                       <div class="home-product-item__favourite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                      </div>
-                     <div class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">43%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                      </div>
-                    </a>
-                  </div>  
-                </div> 
                 <ul class="home-product__pagination pagination">
                   <li class="pagination-item"><a href="" class="pagination-item__link">
                     <i class="pagination-item__icon fas fa-angle-left"></i>
@@ -965,9 +980,9 @@
         </div>
       </div>
       <div class="footer">
-        <div class="grid">
-          <div class="grid__row">
-            <div class="grid__col-2-4">
+        <div class="grid wide footer__content">
+          <div class="row">
+            <div class="col  c-6 m-4 l-2-4">
               <h3 class="footer__title">CHĂM SÓC KHÁCH HÀNG</h3>
               <ul class="footer-list">
                 <li class="footer-item"><a href="" class="footer-item__link">Trung Tâm Trợ Giúp</a></li>
@@ -975,8 +990,7 @@
                 <li class="footer-item"><a href="" class="footer-item__link">Hướng dẫn mua hàng</a></li>
               </ul>
             </div>
-            
-            <div class="grid__col-2-4">
+            <div class="col  c-6 m-4 l-2-4">
               <h3 class="footer__title">Giới thiệu</h3>
               <ul class="footer-list">
                 <li class="footer-item"><a href="" class="footer-item__link">Giới thiệu</a></li>
@@ -984,7 +998,7 @@
                 <li class="footer-item"><a href="" class="footer-item__link">Điều khoản</a></li>
               </ul>
             </div>
-            <div class="grid__col-2-4">
+            <div class="col  c-6 m-4 l-2-4">
               <h3 class="footer__title">Danh mục</h3>
               <ul class="footer-list">
                 <li class="footer-item"><a href="" class="footer-item__link"> Trang điểm mặt</a></li>
@@ -992,7 +1006,7 @@
                 <li class="footer-item"><a href="" class="footer-item__link">Trang điểm mắt</a></li>
               </ul>
             </div>
-            <div class="grid__col-2-4">
+            <div class="col  c-6 m-4 l-2-4">
               <h3 class="footer__title">Theo dõi</h3>
               <ul class="footer-list">
                 <li class="footer-item">
@@ -1012,7 +1026,7 @@
                   </a></li>
               </ul>
             </div>
-            <div class="grid__col-2-4">
+            <div class="col  c-12 m-8 l-2-4">
               <h3 class="footer__title">Vào cửa hàng trên ứng dụng</h3>
               <div class="footer__download">
                 <img src="./asset/img/qr_code.png" alt="" class="footer__download-qr">
@@ -1029,7 +1043,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <div class="grid">
+          <div class="grid wide">
             <p class="footer__text">© 2019 - Bản quyền thuộc về Công ty MyCV</p>
           </div>
         </div>
